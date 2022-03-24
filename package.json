@@ -1,0 +1,19 @@
+{
+  "name": "sunrn_blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.9.7"
+  },
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy-gh": "GH=1 yarn docs:build && bash scripts/deploy-gh.sh"
+  },
+  "dependencies": {
+    "@vuepress-reco/style-default": "^2.0.1-alpha.1",
+    "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.4",
+    "vuepress-theme-reco": "^1.6.11"
+  }
+}
