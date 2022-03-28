@@ -1,6 +1,31 @@
 // 默认值
 $accentColor = #99CC99                 // 主题颜色
-$textColor = #2c3e50                        // 文本颜色
+$textColor = #37352f                        // 文本颜色
 $borderColor = #FF9966                     // 边框线颜色
-$codeBgColor = #282c34                      // 代码块背景色
+$codeBgColor = rgb(247, 246, 243);                      // 代码块背景色
 $backgroundColor = #FFFFCC              // 悬浮块背景色
+
+// 文章和标签中间的竖线
+.home-blog .home-blog-wrapper .info-wrapper .num > div:first-child {
+    border-right: 1px solid #FF9966;
+}
+
+// 代码块中背景和文字颜色
+.content__default {
+  code {
+    color: #ec5757 !important; 
+    pre, pre[class*="language-"] {
+      code {
+        color #37352f!important
+      }
+    }
+  }
+}
+
+tr:nth-child(2n) {
+    background-color: transparent !important;
+}
+
+blockquote {
+    border-left: 0.25rem solid #99CC99 !important;
+}
