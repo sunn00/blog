@@ -35,7 +35,7 @@ module.exports = {
       { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' }
     ],
 
-    lastUpdatedText: '',
+    lastUpdatedText: '上次更新',
     autoAddCategoryToNavbar: true
   },
 
