@@ -1,7 +1,7 @@
 module.exports = {
   title: '一个小小的博客',
   description: '世界奇奇怪怪 幸好我很可爱',
-
+  base: '/blog/',
   head: [
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
@@ -9,7 +9,6 @@ module.exports = {
   theme: 'reco',
   themeConfig: {
     // 博客配置
-    style: '@vuepress-reco/style-default',
     type: 'blog',
     logo: '/computer.png',
     authorAvatar: '/avatar.jpg',
@@ -36,15 +35,7 @@ module.exports = {
       { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' }
     ],
 
-    // sidebar: {
-    //   '/vue/':
-    //     [
-    //       '',
-    //       'vue-cli-differentiates-environments-packaging',
-    //     ]
-    // },
-
-    lastUpdatedText: '',
+    lastUpdatedText: '上次更新',
     autoAddCategoryToNavbar: true
   },
 
