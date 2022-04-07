@@ -11,6 +11,9 @@ $backgroundColor = #FFFFCC              // 悬浮块背景色
 }
 
 // 代码块中背景和文字颜色
+body {
+  font-size: 14px !important;
+}
 .content__default {
   code {
     color: #ec5757 !important; 
@@ -20,10 +23,17 @@ $backgroundColor = #FFFFCC              // 悬浮块背景色
       }
     }
   }
-}
 
-tr:nth-child(2n) {
-    background-color: transparent !important;
+  &:not(.custom) > h4 {
+    font-size: 16px !important;
+  }
+
+  &:not(.custom) > h5,
+  &:not(.custom) > h6 {
+    padding-top: 2rem !important;
+    font-size: 14px !important;
+
+  }
 }
 
 blockquote {
