@@ -3,10 +3,9 @@ title: "ts的基本类型"
 date: 2022-03-30 15:30:00
 sidebar: "auto"
 categories:
-  - Front End
+  - 语言基础
 tags:
-  - typescript
-
+  - TypeScript
 ---
 
 > ts中可以使用的基本类型

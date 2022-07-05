@@ -3,9 +3,9 @@ title: "事件循环机制 -- 定时器"
 date: 2022-03-24 17:20:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - 异步操作
+  - JavaScript
 ---
 
 ## setTimeout()

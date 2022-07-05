@@ -14,6 +14,7 @@
   "dependencies": {
     "@vuepress-reco/style-default": "^2.0.1-alpha.1",
     "@vuepress-reco/vuepress-plugin-bgm-player": "^1.1.4",
+    "vuepress-plugin-nuggets-style-copy": "^1.0.3",
     "vuepress-theme-reco": "^1.6.11"
   }
 }

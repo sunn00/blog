@@ -3,9 +3,10 @@ title: "移动端适配"
 date: 2022-03-28 14:49:25
 sidebar: "auto"
 categories:
-  - Business Scenarios
+  - 业务场景
 tags:
-  - html
+  - HTML
+  - 兼容性
 ---
 
 

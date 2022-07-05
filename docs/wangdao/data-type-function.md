@@ -3,8 +3,9 @@ title: "数据类型 --  函数"
 date: 2022-03-24 17:22:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
+  - JavaScript
   - 数据类型
 ---
 

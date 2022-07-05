@@ -3,11 +3,9 @@ title: "开发中常用到的工具函数"
 date: 2022-04-01 15:41:00
 sidebar: "auto"
 categories:
-  - Front End
+  - 基础三剑客
 tags:
-  - javascript
-
-
+  - JavaScript
 ---
 
 > 工具函数可以极大地提高我们的开发效率，和代码的复用性，我们常在项目中设置一个util的工具类，本文列举一些常用的工具函数，方便添加到项目中。

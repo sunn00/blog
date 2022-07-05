@@ -3,9 +3,9 @@ title: "tsconfig.json 配置文件"
 date: 2022-03-30 11:16:00
 sidebar: "auto"
 categories:
-  - Front End
+  - 语言基础
 tags:
-  - typescript
+  - TypeScript
 ---
 
 > 要想创建对象，必须要先定义类，类可以理解为对象的模型，程序中可以根据类创建指定类型的对象。

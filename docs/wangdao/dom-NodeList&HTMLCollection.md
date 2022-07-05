@@ -3,9 +3,9 @@ title: "dom节点 -- NodeList & HTMLCollection"
 date: 2022-03-24 17:24:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - dom
+  - JavaScript
 ---
 
 节点都是单个对象，有时需要一种数据结构，能够容纳多个节点。DOM 提供两种节点集合，用于容纳多个节点：`NodeList`和`HTMLCollection`。两者区别在于，`NodeList`可以包含各种类型的节点，`HTMLCollection`只能包含 HTML 元素节点。

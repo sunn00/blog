@@ -3,9 +3,9 @@ title: "标准库 -- String"
 date: 2022-03-24 17:25:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - 标准库
+  - JavaScript
 ---
 
 ## 静态方法

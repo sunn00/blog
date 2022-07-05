@@ -3,9 +3,10 @@ title: "事件循环机制 --  概述"
 date: 2022-03-24 17:14:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - 异步操作
+  - async/await
+  - JavaScript
 ---
 
 ## 事件循环机制

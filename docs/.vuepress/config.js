@@ -40,6 +40,21 @@ module.exports = {
   },
 
   plugins: [
+     // 更新刷新插件
+     ['@vuepress/pwa', {
+      serviceWorker: true,
+      updatePopup: {
+          message: "发现新内容可用",
+          buttonText: "刷新"
+      }
+    }],
+  // 代码复制弹窗插件
+    ["vuepress-plugin-nuggets-style-copy", {
+      copyText: "copy",
+      tip: {
+          content: "复制成功!"
+      }
+    }],
     ["@vuepress-reco/vuepress-plugin-bgm-player", {
       audios: [
         // 本地文件示例
@@ -93,6 +108,16 @@ module.exports = {
         },
       ],
       autoShrink: true,
+    }],
+    ['@vuepress/last-updated', 
+    {
+      transformer: (timestamp, lang) => {
+        return (new Date(timestamp)).toUTCString() 
+        //或者用下面这段
+        // const moment = require('moment')
+        // moment.locale(lang)
+        // return moment(timestamp).toLocaleString()
+      }
     }],
   ],
 

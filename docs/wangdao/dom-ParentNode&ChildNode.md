@@ -3,9 +3,9 @@ title: "dom节点 -- ParentNode & ChildNode"
 date: 2022-03-24 17:25:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - dom
+  - JavaScript
 ---
 
 `ParentNode`接口表示当前节点是一个父节点，提供一些处理子节点的方法。`ChildNode`接口表示当前节点是一个子节点，提供一些相关方法。

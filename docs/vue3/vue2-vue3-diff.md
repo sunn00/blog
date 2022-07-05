@@ -3,9 +3,9 @@ title: "vue2与vue3 -- 迁移指南"
 date: 2022-04-01 18:12:00
 sidebar: "auto"
 categories:
-  - Front End
+  - 前端框架
 tags:
-  - vue3
+  - Vue
 ---
 
 > 记录vue3比较与vue2新增的一些特性，和vue3非兼容特性。这样在使用vue3时，可以书写出标准高效的代码，对代码质量有很大帮助。

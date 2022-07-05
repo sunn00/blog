@@ -3,9 +3,9 @@ title: "dom节点 -- 概述"
 date: 2022-03-24 17:24:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - dom
+  - JavaScript
 ---
 
 ## DOM

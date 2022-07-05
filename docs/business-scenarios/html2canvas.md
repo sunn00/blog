@@ -3,10 +3,10 @@ title: "html2canvas的使用"
 date: 2022-03-28 10:30:00
 sidebar: "auto"
 categories:
-  - Business Scenarios
+  - 业务场景
 tags:
-  - html
-  - canvas
+  - HTML
+  - Canvas
 ---
 
 > html2canvas是一个非常流行的前端开源工具，在GitHub上已有25k+的stars。在项目开发中，我们经常使用他来实现一些生成截图的需求。html2canvas的主要功能是将前端页面中的HTML按照一定规则绘制在Canvas中，之后我们可以对Canvas进行读取和导出，从而达到类似于截图的效果。

@@ -3,9 +3,10 @@ title: "事件循环机制 -- Promise"
 date: 2022-03-24 17:19:00
 sidebar: "auto"
 categories:
-  - 网道js入门
+  - 基础三剑客
 tags:
-  - 异步操作
+  - Promise
+  - JavaScript
 ---
 
 ## 概述
