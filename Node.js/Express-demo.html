@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Express框架初使用 | 一个小小的博客</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="世界奇奇怪怪 幸好我很可爱">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.f89bcc8a.css" as="style"><link rel="preload" href="/blog/assets/js/app.574301b3.js" as="script"><link rel="preload" href="/blog/assets/js/3.c3053bb5.js" as="script"><link rel="preload" href="/blog/assets/js/1.a246ea40.js" as="script"><link rel="preload" href="/blog/assets/js/14.c37762dd.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.ec942079.js"><link rel="prefetch" href="/blog/assets/js/11.98668f1b.js"><link rel="prefetch" href="/blog/assets/js/12.9a9f0d76.js"><link rel="prefetch" href="/blog/assets/js/13.07985c47.js"><link rel="prefetch" href="/blog/assets/js/15.80eed9ca.js"><link rel="prefetch" href="/blog/assets/js/16.2d3c6d5b.js"><link rel="prefetch" href="/blog/assets/js/17.662302bc.js"><link rel="prefetch" href="/blog/assets/js/18.4be5c109.js"><link rel="prefetch" href="/blog/assets/js/19.61d786d8.js"><link rel="prefetch" href="/blog/assets/js/20.b8c6a7b7.js"><link rel="prefetch" href="/blog/assets/js/21.c588123a.js"><link rel="prefetch" href="/blog/assets/js/22.1fe10d87.js"><link rel="prefetch" href="/blog/assets/js/23.8bc1d682.js"><link rel="prefetch" href="/blog/assets/js/24.44cb0795.js"><link rel="prefetch" href="/blog/assets/js/25.6bd753d4.js"><link rel="prefetch" href="/blog/assets/js/26.3c54fb14.js"><link rel="prefetch" href="/blog/assets/js/27.7d626a6e.js"><link rel="prefetch" href="/blog/assets/js/28.514b07a7.js"><link rel="prefetch" href="/blog/assets/js/29.65ae6276.js"><link rel="prefetch" href="/blog/assets/js/30.f48a85b2.js"><link rel="prefetch" href="/blog/assets/js/31.580ea39f.js"><link rel="prefetch" href="/blog/assets/js/32.786dde3a.js"><link rel="prefetch" href="/blog/assets/js/33.7cde1339.js"><link rel="prefetch" href="/blog/assets/js/34.25554bbf.js"><link rel="prefetch" href="/blog/assets/js/35.89f7e034.js"><link rel="prefetch" href="/blog/assets/js/36.523f3457.js"><link rel="prefetch" href="/blog/assets/js/37.1e9bb36e.js"><link rel="prefetch" href="/blog/assets/js/38.9a78fd1b.js"><link rel="prefetch" href="/blog/assets/js/39.a14134cb.js"><link rel="prefetch" href="/blog/assets/js/4.9ba22c32.js"><link rel="prefetch" href="/blog/assets/js/40.033568a5.js"><link rel="prefetch" href="/blog/assets/js/41.3f2c61a5.js"><link rel="prefetch" href="/blog/assets/js/42.72c3ad8b.js"><link rel="prefetch" href="/blog/assets/js/43.5accc13c.js"><link rel="prefetch" href="/blog/assets/js/44.fd298ffb.js"><link rel="prefetch" href="/blog/assets/js/45.4b7b7f63.js"><link rel="prefetch" href="/blog/assets/js/46.98b43b31.js"><link rel="prefetch" href="/blog/assets/js/47.c9b3defe.js"><link rel="prefetch" href="/blog/assets/js/48.81107d44.js"><link rel="prefetch" href="/blog/assets/js/5.c8b33720.js"><link rel="prefetch" href="/blog/assets/js/6.2218c963.js"><link rel="prefetch" href="/blog/assets/js/7.9063ac4b.js"><link rel="prefetch" href="/blog/assets/js/8.fd27b90a.js"><link rel="prefetch" href="/blog/assets/js/9.2c059ffa.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.f89bcc8a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-130b300a><div data-v-130b300a><div class="password-shadow password-wrapper-out" style="display:none;" data-v-25ba6db2 data-v-130b300a data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>一个小小的博客</h3> <p class="description" data-v-25ba6db2 data-v-25ba6db2>世界奇奇怪怪 幸好我很可爱</p> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div class="hide" data-v-130b300a><header class="navbar" data-v-130b300a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/computer.png" alt="一个小小的博客" class="logo"> <span class="site-name">一个小小的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/前端工具/" class="nav-link"><i class="undefined"></i>
+  前端工具
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/业务场景/" class="nav-link"><i class="undefined"></i>
+  业务场景
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/基础三剑客/" class="nav-link"><i class="undefined"></i>
+  基础三剑客
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/前端框架/" class="nav-link"><i class="undefined"></i>
+  前端框架
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/技术月刊/" class="nav-link"><i class="undefined"></i>
+  技术月刊
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/前段工具/" class="nav-link"><i class="undefined"></i>
+  前段工具
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/面试集锦/" class="nav-link"><i class="undefined"></i>
+  面试集锦
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/语言基础/" class="nav-link"><i class="undefined"></i>
+  语言基础
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-130b300a></div> <aside class="sidebar" data-v-130b300a><div class="personal-info-wrapper" data-v-39576ba9 data-v-130b300a><img src="/blog/avatar.jpg" alt="author-avatar" class="personal-img" data-v-39576ba9> <!----> <div class="num" data-v-39576ba9><div data-v-39576ba9><h3 data-v-39576ba9>35</h3> <h6 data-v-39576ba9>Articles</h6></div> <div data-v-39576ba9><h3 data-v-39576ba9>15</h3> <h6 data-v-39576ba9>Tags</h6></div></div> <ul class="social-links" data-v-39576ba9></ul> <hr data-v-39576ba9></div> <nav class="nav-links"><div class="nav-item"><a href="/blog/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/categories/前端工具/" class="nav-link"><i class="undefined"></i>
+  前端工具
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/业务场景/" class="nav-link"><i class="undefined"></i>
+  业务场景
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/基础三剑客/" class="nav-link"><i class="undefined"></i>
+  基础三剑客
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/前端框架/" class="nav-link"><i class="undefined"></i>
+  前端框架
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/技术月刊/" class="nav-link"><i class="undefined"></i>
+  技术月刊
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/前段工具/" class="nav-link"><i class="undefined"></i>
+  前段工具
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/面试集锦/" class="nav-link"><i class="undefined"></i>
+  面试集锦
+</a></li><li class="dropdown-item"><!----> <a href="/blog/categories/语言基础/" class="nav-link"><i class="undefined"></i>
+  语言基础
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-25ba6db2 data-v-130b300a><h3 class="title" data-v-25ba6db2 data-v-25ba6db2>Express框架初使用</h3> <!----> <label id="box" class="inputBox" data-v-25ba6db2 data-v-25ba6db2><input type="password" value="" data-v-25ba6db2> <span data-v-25ba6db2>Konck! Knock!</span> <button data-v-25ba6db2>OK</button></label> <div class="footer" data-v-25ba6db2 data-v-25ba6db2><span data-v-25ba6db2><i class="iconfont reco-theme" data-v-25ba6db2></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-25ba6db2>vuePress-theme-reco</a></span> <span data-v-25ba6db2><i class="iconfont reco-copyright" data-v-25ba6db2></i> <a data-v-25ba6db2><!---->
+            
+          <!---->
+          2022
+        </a></span></div></div> <div data-v-130b300a><main class="page"><section><div class="page-title"><h1 class="title">Express框架初使用</h1> <div data-v-f875f3fc><!----> <i class="iconfont reco-date" data-v-f875f3fc><span data-v-f875f3fc>4/12/2022</span></i> <!----> <i class="tags iconfont reco-tag" data-v-f875f3fc><span class="tag-item" data-v-f875f3fc>Node.js</span><span class="tag-item" data-v-f875f3fc>Express</span></i></div></div> <div class="theme-reco-content content__default"><blockquote><p>跟着MDN中的nodejs入门，使用express框架搭建一个本地图书馆的小项目，在项目中可以学习到项目结构、路由模块搭建、mongoDB数据库的使用和pug模板。先跟着教程走一遍流程，再重新自己总结知识点。</p></blockquote> <h2 id="async"><a href="#async" class="header-anchor">#</a> Async</h2> <blockquote><p>在使用nodejs时，我们常需要等到数据返回才会继续渲染模板，如果控制器只需要一个异步操作，那我们可以简单的使用回调函数来实现，而当控制器需要执行多个异步操作时，回调函数就不够看了，async模块可以实现并行执行所有请求，然后在所有查询完成后执行单个回调。</p></blockquote> <h4 id="async-parallel"><a href="#async-parallel" class="header-anchor">#</a> <code>async.parallel()</code></h4> <p>用于并行运行多个异步操作。</p> <p>第一个参数为要运行的异步操作函数的集合（数组、对象、可迭代集合）。每个函数都传递一个回调函数callback(err, result) ，它必须在完成时调用错误err（可以为null）和可选的结果值。</p> <p>第二个可选参数是一个回调，它将在第一个参数中的所有函数完成时运行。回调的调用，是使用错误参数和包含各个异步操作结果的结果集合。结果集合与第一个参数的类型相同。如果任何并行函数报告错误，则提前调用回调（具有错误值）。数组顺序结果，将与声明函数的原始顺序匹配 - 而不是它们完成的顺序</p> <div class="language-js extra-class"><pre class="language-js"><code>async<span class="token punctuation">.</span><span class="token function">parallel</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">one</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">two</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token operator">...</span>
+  <span class="token function-variable function">something_else</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token operator">...</span> <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// optional callback</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> results</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 'results' is now equal to: {one: 1, two: 2, ..., something_else: some_value}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h4 id="async-series"><a href="#async-series" class="header-anchor">#</a> <code>async.series()</code></h4> <p>用于按顺序运行多个异步操作，后续函数不依赖于先前函数的输出。它本质上是声明的，并且行为与<code>async.parallel()</code>.相同。</p> <blockquote><p>⚠️ECMAScript（JavaScript）语言规范指出，对象的枚举顺序是未定义的，因此可能不会按照在所有平台上指定它们的顺序，调用这些函数。如果顺序真的很重要，那么你应该传递一个数组而不是一个对象，如下所示。</p></blockquote> <h4 id="async-waterfall"><a href="#async-waterfall" class="header-anchor">#</a> <code>async.waterfall()</code></h4> <p>用于在每个操作依赖于前一个操作的结果时,依次运行多个异步操作。</p> <p>每个异步函数调用的回调，包含第一个参数的<code>null</code>，与后续参数里的结果。该序列中的每个函数，都将前一个回调的结果参数，作为第一个参数，然后是回调函数。</p> <p>完成所有操作后，将使用上一操作的结果，调用最终回调。当您参考下面的代码片段时，这种工作方式会更加明确</p> <div class="language-js extra-class"><pre class="language-js"><code>async<span class="token punctuation">.</span><span class="token function">waterfall</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'one'</span><span class="token punctuation">,</span> <span class="token string">'two'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arg1<span class="token punctuation">,</span> arg2<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// arg1 now equals 'one' and arg2 now equals 'two' </span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'three'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arg1<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// arg1 now equals 'three'</span>
+    <span class="token function">callback</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'done'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// result now equals 'done'</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="pug模板"><a href="#pug模板" class="header-anchor">#</a> Pug模板</h2> <p>该文件映射典型 HTML 文件的结构，其中（几乎）每一行中的第一个单词是 HTML 元素，并且缩进用于指示嵌套元素。</p> <p>元素属性被定义在其关联元素之后的括号中。在括号内，属性定义在以逗号或空格分隔的属性名称和属性值对的列表中，例如：</p> <ul><li><code>script(type='text/javascript')</code>, <code>link(rel='stylesheet', href='/stylesheets/style.css')</code></li> <li><code>meta(name='viewport' content='width=device-width initial-scale=1')</code></li></ul> <p>所有属性的值都被转义（例如 “<code>&gt;</code>” 等字符转换为 HTML 代码等效项，如“<code>&gt;</code>”），以防止注入 JavaScript 或跨站点脚本攻击。</p> <p>如果标记后跟着等号，则以下文本将被视为 JavaScript 表达式。</p> <p>如果标记后面没有等号，则将内容视为纯文本。在纯文本中，您可以使用<code>#{}</code> 和<code>!{}</code>语法，插入转义和非转义数据</p> <div class="language-js extra-class"><pre class="language-js"><code>p This is a line <span class="token keyword">with</span> #<span class="token punctuation">[</span>em some emphasis<span class="token punctuation">]</span> and #<span class="token punctuation">[</span>strong strong text<span class="token punctuation">]</span> markup<span class="token punctuation">.</span>
+p This line has an un<span class="token operator">-</span>escaped string<span class="token operator">:</span> <span class="token operator">!</span><span class="token punctuation">{</span><span class="token string">'&lt;em&gt; is emphasised&lt;/em&gt;'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> an escaped string<span class="token operator">:</span> #<span class="token punctuation">{</span><span class="token string">'&lt;em&gt; is not emphasised&lt;/em&gt;'</span><span class="token punctuation">}</span><span class="token punctuation">,</span> and escaped variables<span class="token operator">:</span> #<span class="token punctuation">{</span>title<span class="token punctuation">}</span><span class="token punctuation">.</span>
+</code></pre></div><blockquote><p>您几乎总是希望转义来自用户的数据（通过**<code>#{}</code>**语法）。可信任的数据（例如，生成的记录计数等）可以不先转义就显示。</p></blockquote> <p>您可以在行的开头使用管道（“<strong>|</strong>”）字符来表示“<a href="https://pugjs.org/language/plain-text.html" target="_blank" rel="noopener noreferrer">纯文本<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>”。例如，下面显示的附加文本，将显示在与前一个锚点相同的行上，但不会链接。</p> <div class="language-html extra-class"><pre class="language-html"><code>a(href='http://someurl/') Link text
+| Plain text
+</code></pre></div><p>Pug 允许您使用<code>if</code>, <code>else</code> , <code>else if</code> 和 <code>unless</code>执行条件操作 - 例如：</p> <div class="language-html extra-class"><pre class="language-html"><code>if title
+  p A variable named &quot;title&quot; exists
+else
+  p A variable named &quot;title&quot; does not exist
+</code></pre></div><p>以使用<code>each-in</code> 或 <code>while</code>语法执行循环/迭代操作。在下面的代码片段中，我们循环遍历数组，以显示变量列表（注意，使用 'li =' 来评估 “val” ，以作为下面的变量。）迭代的值也可以传递给模板作为变量！</p> <div class="language-js extra-class"><pre class="language-js"><code>ul
+  each val <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+    li<span class="token operator">=</span> val
+</code></pre></div><p>块标记<code>block</code>用于标记 “可在派生模板中替换的内容部分“（如果未重新定义块，则使用其在基类中的实现）。<code>extends</code>标记，标识要使用的基本模板，然后我们使用 <code>block *section_name*</code> ，来指示我们将覆盖的部分的新内容。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// extends标记，标识要使用的基本模板，然后我们使用 block section_name ，来指示我们将覆盖的部分的新内容。</span>
+
+<span class="token keyword">extends</span> <span class="token class-name">layout</span>
+
+block content
+  h1<span class="token operator">=</span> title
+
+  ul
+  each book <span class="token keyword">in</span> book_list
+    li
+      <span class="token function">a</span><span class="token punctuation">(</span>href<span class="token operator">=</span>book<span class="token punctuation">.</span>url<span class="token punctuation">)</span> #<span class="token punctuation">{</span>book<span class="token punctuation">.</span>title<span class="token punctuation">}</span>
+      <span class="token operator">|</span>  <span class="token punctuation">(</span>#<span class="token punctuation">{</span>book<span class="token punctuation">.</span>author<span class="token punctuation">.</span>name<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">else</span>
+    li There are no books<span class="token punctuation">.</span>
+</code></pre></div><p>Item</p> <div class="language- extra-class"><pre class="language-text"><code>
+&lt;template&gt;
+  &lt;div
+    class=&quot;relative item-title leading-36px hover:bg-[#F0F7FF]&quot;
+    :style=&quot;{ 'padding-left': paddingLeftPx }&quot;
+    :class=&quot;{ 'checked-item': checkedKey === categories.id }&quot;
+  &gt;
+    &lt;holder-outlined
+      v-if=&quot;isShowSettingIcon&quot;
+      style=&quot;color: #165DFF&quot;
+      class=&quot;mover absolute top-11px left-12px cursor-pointer setting-icon&quot;
+    /&gt;
+
+    &lt;div class=&quot;relative flex justify-between items-center&quot; @click=&quot;handleChecked(categories.id)&quot;&gt;
+      &lt;caret-down-outlined
+        v-if=&quot;categories?.children?.length !== 0&quot;
+        style=&quot;color: #C9CDD4&quot;
+        class=&quot;absolute top-12px -left-18px text-16px text-[#C9CDD4]&quot;
+        @click.stop=&quot;handleExpaned(categories)&quot;
+      /&gt;
+
+      &lt;span class=&quot;cursor-default&quot;&gt;
+        {{ categories.name }}
+        &lt;span class=&quot;pl-4px text-[#86909C]&quot;&gt;{{ categories.count }}&lt;/span&gt;
+      &lt;/span&gt;
+
+      &lt;template v-if=&quot;isAllGoods&quot;&gt;
+        &lt;plus-circle-outlined class=&quot;text-16px setting-icon&quot; style=&quot;color: #165DFF&quot; /&gt;
+      &lt;/template&gt;
+
+      &lt;div v-else-if=&quot;isShowSettingIcon&quot; class=&quot;pr-14px&quot; @click.stop&gt;
+        &lt;plus-circle-outlined class=&quot;text-16px setting-icon&quot; style=&quot;color: #165DFF&quot; /&gt;
+        &lt;a-dropdown :trigger=&quot;['click']&quot;&gt;
+          &lt;frown-outlined class=&quot;ml-4px text-16px setting-icon&quot; style=&quot;color: #165DFF&quot; /&gt;
+          &lt;template #overlay&gt;
+            &lt;a-menu&gt;
+              &lt;a-menu-item&gt;
+                &lt;a href=&quot;javascript:;&quot;&gt;置顶&lt;/a&gt;
+              &lt;/a-menu-item&gt;
+              &lt;a-menu-item&gt;
+                &lt;a href=&quot;javascript:;&quot;&gt;重命名&lt;/a&gt;
+              &lt;/a-menu-item&gt;
+              &lt;a-menu-item&gt;
+                &lt;a href=&quot;javascript:;&quot;&gt;删除&lt;/a&gt;
+              &lt;/a-menu-item&gt;
+            &lt;/a-menu&gt;
+          &lt;/template&gt;
+        &lt;/a-dropdown&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot; setup&gt;
+import { includes, isObject } from 'lodash-es';
+import { HolderOutlined, CaretDownOutlined, PlusCircleOutlined, FrownOutlined } from '@ant-design/icons-vue';
+
+
+type CategoriesItem = {
+  id: string | number, // 分类Id
+  name: string, // 分类名称
+  count?: string,
+  children?: CategoriesItem[], // 子分类
+}
+
+interface Props {
+  categories: CategoriesItem,
+  checkedKey: string,
+  expanedKey: Map&lt;string, boolean&gt;,
+  paddingLeftPx: string
+}
+
+const props = defineProps&lt;Props&gt;()
+const emit = defineEmits(['checked', 'expaned'])
+
+const isShowSettingIcon = computed(() =&gt; {
+  return !includes(['1', '2'], props.categories.id)
+})
+
+const isAllGoods = computed(() =&gt; {
+  return props.categories.id === &quot;1&quot;
+})
+
+const handleChecked = (id: string | number): void =&gt; {
+  emit(&quot;checked&quot;, id)
+}
+
+const handleExpaned = (categories: CategoriesItem | string): void =&gt; {
+  if (isObject(categories)) {
+    emit(&quot;expaned&quot;, categories.id)
+  } else {
+    emit(&quot;expaned&quot;, categories)
+  }
+}
+&lt;/script&gt;
+
+&lt;style lang=&quot;less&quot; scoped&gt;
+.checked-item {
+  background-color: #f2f3f5;
+}
+
+.setting-icon {
+  @apply hidden cursor-pointer;
+}
+
+.item-title:hover {
+  .setting-icon {
+    @apply inline-block;
+  }
+}
+&lt;/style&gt;
+</code></pre></div><p>category</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;section class=&quot;w-204px h-full border border-solid border-[#E5E6EB] rounded-sm&quot;&gt;
+    &lt;header class=&quot;p-12px pb-0&quot;&gt;
+      &lt;h5 class=&quot;mb-12px text-16px&quot;&gt;商品分类&lt;/h5&gt;
+      &lt;a-input
+        v-model:value=&quot;searchCategoriesForm.name&quot;
+        class=&quot;w-180px&quot;
+        placeholder=&quot;搜索分类&quot;
+        @search=&quot;onSearch&quot;
+      &gt;
+        &lt;template #suffix&gt;
+          &lt;search-outlined /&gt;
+        &lt;/template&gt;
+      &lt;/a-input&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;py-16px&quot;&gt;
+      &lt;categories-draggable
+        :categories=&quot;categories[0]&quot;
+        :level=&quot;0&quot;
+        :checkedKey=&quot;checkedKey&quot;
+        :expanedKey=&quot;expanedKey&quot;
+        @checked=&quot;handleChecked&quot;
+        @expaned=&quot;handleExpaned&quot;
+      /&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+&lt;/template&gt;
+
+&lt;script setup lang='ts'&gt;
+import draggable from &quot;vuedraggable&quot;;
+import { includes, remove } from 'lodash-es';
+
+import { SearchOutlined } from '@ant-design/icons-vue';
+import CategoriesDraggable from '~/views/goodsManage/GoodsManageCategoriesDraggable.vue'
+
+
+interface searchCategoriesForm {
+  name: string
+}
+
+const searchCategoriesForm = reactive&lt;searchCategoriesForm&gt;({
+  name: &quot;&quot;
+})
+
+const onSearch = (searchValue: string) =&gt; {
+  console.log('use value', searchValue);
+  console.log('or use this.value', searchCategoriesForm.name);
+};
+
+type CategoriesItem = {
+  id: string | number, // 分类Id
+  name: string, // 分类名称
+  count?: string,
+  children?: CategoriesItem[], // 子分类
+}
+
+const categories = ref&lt;CategoriesItem[]&gt;([
+  {
+    &quot;id&quot;: &quot;1&quot;,
+    &quot;name&quot;: &quot;全部商品&quot;,
+    &quot;count&quot;: '40',
+    &quot;children&quot;: [
+      {
+        &quot;id&quot;: &quot;2&quot;,
+        &quot;name&quot;: &quot;默认分类&quot;,
+        &quot;count&quot;: '40',
+        &quot;children&quot;: []
+      },
+      {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;name&quot;: &quot;会计课程&quot;,
+        &quot;count&quot;: '40',
+        &quot;children&quot;: [
+          {
+            &quot;id&quot;: &quot;4&quot;,
+            &quot;name&quot;: &quot;会员&quot;,
+            &quot;count&quot;: '40',
+            &quot;children&quot;: []
+          },
+          {
+            &quot;id&quot;: &quot;8&quot;,
+            &quot;count&quot;: '40',
+            &quot;name&quot;: &quot;会员2&quot;,
+            &quot;children&quot;: []
+          },
+          {
+            &quot;id&quot;: &quot;9&quot;,
+            &quot;count&quot;: '40',
+            &quot;name&quot;: &quot;会员3&quot;,
+            &quot;children&quot;: []
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: &quot;5&quot;,
+        &quot;count&quot;: '40',
+        &quot;name&quot;: &quot;拖动排序&quot;,
+        &quot;children&quot;: []
+      },
+      {
+        &quot;id&quot;: &quot;6&quot;,
+        &quot;count&quot;: '40',
+        &quot;name&quot;: &quot;营销活动&quot;,
+        &quot;children&quot;: [
+          {
+            &quot;id&quot;: &quot;7&quot;,
+            &quot;count&quot;: '40',
+            &quot;name&quot;: &quot;打卡活动&quot;,
+            &quot;children&quot;: []
+          },
+          {
+            &quot;id&quot;: &quot;10&quot;,
+            &quot;count&quot;: '40',
+            &quot;name&quot;: &quot;打卡活&quot;,
+            &quot;children&quot;: []
+          },
+          {
+            &quot;id&quot;: &quot;11&quot;,
+            &quot;count&quot;: '40',
+            &quot;name&quot;: &quot;打卡&quot;,
+            &quot;children&quot;: []
+          },
+          {
+            &quot;id&quot;: &quot;12&quot;,
+            &quot;count&quot;: '40',
+            &quot;name&quot;: &quot;打&quot;,
+            &quot;children&quot;: []
+          },
+        ]
+      }
+    ]
+  }
+])
+
+
+const checkedKey = ref&lt;string&gt;(&quot;1&quot;)
+const expanedKey = reactive(new Map([[&quot;1&quot;, true]]))
+
+const handleChecked = (id: string): void =&gt; {
+  checkedKey.value = id
+}
+
+const handleExpaned = (id: string): void =&gt; {
+  if (expanedKey.has(id)) {
+    expanedKey.set(id, !expanedKey.get(id))
+  } else {
+    expanedKey.set(id, true)
+  }
+}
+
+&lt;/script&gt;
+
+&lt;style lang='less' scoped&gt;
+:deep(.ant-input-affix-wrapper) {
+  @apply rounded-sm;
+}
+
+.anticon-caret-down {
+  @apply mr-8px;
+}
+
+:deep(.ant-menu) {
+  .ant-menu-sub.ant-menu-inline {
+    background-color: #fff;
+  }
+
+  .ant-menu-title-content {
+    @apply flex items-center;
+  }
+
+  .ant-menu-submenu-arrow {
+    display: none;
+  }
+}
+&lt;/style&gt;
+</code></pre></div><p>graggable</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;ul class=&quot;relative text-14px text-[#1D2129] cursor-default&quot;&gt;
+    &lt;div
+      class=&quot;relative item-title leading-36px hover:bg-[#F0F7FF]&quot;
+      :style=&quot;{ 'padding-left': paddingLeftPx }&quot;
+      :class=&quot;{ 'checked-item': checkedKey === categories.id }&quot;
+    &gt;
+      &lt;holder-outlined
+        style=&quot;color: #165DFF&quot;
+        class=&quot;mover absolute top-11px left-12px cursor-pointer setting-icon&quot;
+        v-if=&quot;isShowSettingIcon&quot;
+      /&gt;
+
+      &lt;div class=&quot;relative flex justify-between items-center&quot; @click=&quot;handleChecked(categories.id)&quot;&gt;
+        &lt;caret-down-outlined
+          v-if=&quot;categories?.children.length !== 0&quot;
+          style=&quot;color: #C9CDD4&quot;
+          class=&quot;absolute top-10px -left-18px text-16px text-[#C9CDD4]&quot;
+          :class=&quot;{ 'rotate-90': checkedKey === categories.id }&quot;
+          @click.stop=&quot;handleExpaned(categories)&quot;
+        /&gt;
+
+        &lt;span class=&quot;cursor-default&quot;&gt;
+          {{ categories.name }}
+          &lt;span class=&quot;pl-4px text-[#86909C]&quot;&gt;{{ categories.count }}&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;template v-if=&quot;isAllGoods&quot;&gt;
+          &lt;plus-circle-outlined class=&quot;pr-14px text-16px cursor-pointer&quot; style=&quot;color: #165DFF&quot; /&gt;
+        &lt;/template&gt;
+
+        &lt;div v-else-if=&quot;isShowSettingIcon&quot; class=&quot;pr-14px&quot; @click.stop&gt;
+          &lt;plus-circle-outlined class=&quot;text-16px setting-icon&quot; style=&quot;color: #165DFF&quot; /&gt;
+          &lt;a-dropdown :trigger=&quot;['click']&quot;&gt;
+            &lt;frown-outlined class=&quot;ml-4px text-16px setting-icon&quot; style=&quot;color: #165DFF&quot; /&gt;
+            &lt;template #overlay&gt;
+              &lt;a-menu&gt;
+                &lt;a-menu-item&gt;
+                  &lt;span&gt;置顶&lt;/span&gt;
+                &lt;/a-menu-item&gt;
+                &lt;a-menu-item&gt;
+                  &lt;span&gt;重命名&lt;/span&gt;
+                &lt;/a-menu-item&gt;
+                &lt;a-menu-item&gt;
+                  &lt;span&gt;删除&lt;/span&gt;
+                &lt;/a-menu-item&gt;
+              &lt;/a-menu&gt;
+            &lt;/template&gt;
+          &lt;/a-dropdown&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;draggable
+      handle=&quot;.mover&quot;
+      v-model=&quot;categories.children&quot;
+      tag=&quot;li&quot;
+      :group=&quot;categories.name&quot;
+      item-key=&quot;id&quot;
+      animation=&quot;300&quot;
+      :component-data=&quot;{ name: 'fade' }&quot;
+      class=&quot;transition-opacity duration-200&quot;
+      :class=&quot;{ 'transfrom max-h-screen': expanedKey.get(categories.id), 'h-0 opacity-0': !expanedKey.get(categories.id) }&quot;
+      :move=&quot;onMoveCallback&quot;
+    &gt;
+      &lt;template #item=&quot;{ element }&quot;&gt;
+        &lt;categories-draggable
+          :categories=&quot;element&quot;
+          :level=&quot;currentLevel&quot;
+          :checkedKey=&quot;checkedKey&quot;
+          :expanedKey=&quot;expanedKey&quot;
+          @checked=&quot;handleChecked&quot;
+          @expaned=&quot;handleExpaned&quot;
+        /&gt;
+      &lt;/template&gt;
+    &lt;/draggable&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;
+&lt;script lang=&quot;ts&quot; setup&gt;
+import draggable from &quot;vuedraggable&quot;;
+import { HolderOutlined, CaretDownOutlined, PlusCircleOutlined, FrownOutlined } from '@ant-design/icons-vue';
+
+import CategoriesDraggable from '~/views/goodsManage/GoodsManageCategoriesDraggable.vue'
+import { includes, isObject } from 'lodash-es';
+
+type CategoryItem = {
+  id: string | number, // 分类Id
+  name: string, // 分类名称
+  count?: string,
+  children: CategoryItem[] | [], // 子分类
+}
+
+interface Props {
+  categories: CategoryItem,
+  level: number,
+  checkedKey: string,
+  expanedKey: Map&lt;string, boolean&gt;
+}
+
+const props = defineProps&lt;Props&gt;()
+
+const emit = defineEmits(['checked', 'expaned'])
+
+
+const handleChecked = (id: string): void =&gt; {
+  emit(&quot;checked&quot;, id)
+}
+
+const handleExpaned = (categories: CategoryItem | string): void =&gt; {
+  if (isObject(categories)) {
+    emit(&quot;expaned&quot;, categories.id)
+  } else {
+    emit(&quot;expaned&quot;, categories)
+  }
+}
+
+const currentLevel = computed(() =&gt; {
+  console.log(props.level);
+  return props.level + 1
+})
+
+const paddingLeftPx = computed(() =&gt; {
+  return props.level ? `${14 * props.level + 30}px` : '30px'
+})
+
+const isShowSettingIcon = computed(() =&gt; {
+  return !includes(['1', '2'], props.categories.id)
+})
+
+const isAllGoods = computed(() =&gt; {
+  return props.categories.id === &quot;1&quot;
+})
+
+const onMoveCallback = (evt: any, originalEvent: any) =&gt; {
+  if (evt.relatedContext.element.name == '默认分类') return false;
+  return true;
+}
+
+
+&lt;/script&gt;
+
+&lt;style  scoped&gt;
+.checked-item {
+  background-color: #f2f3f5;
+}
+
+.setting-icon {
+  @apply hidden cursor-pointer;
+}
+
+.item-title:hover .setting-icon {
+  @apply inline-block;
+}
+
+.ant-dropdown-menu-item {
+  @apply px-8px;
+}
+.ant-dropdown-menu-title-content &gt; span {
+  @apply text-[#165DFF];
+}
+&lt;/style&gt;
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <!----> <div class="comments-wrapper"><!----></div> <ul class="side-bar sub-sidebar-wrapper" style="width:12rem;" data-v-cb1513f6><li class="level-2" data-v-cb1513f6><a href="/blog/Node.js/Express-demo.html#async" class="sidebar-link reco-side-async" data-v-cb1513f6>Async</a></li><li class="level-2" data-v-cb1513f6><a href="/blog/Node.js/Express-demo.html#pug模板" class="sidebar-link reco-side-pug模板" data-v-cb1513f6>Pug模板</a></li></ul></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><div class="reco-bgm-panel" data-v-b1d3339e><audio id="bgm" src="/bgm/TOMBOY - (G)I-DLE.mp3" data-v-b1d3339e></audio> <div class="reco-float-box" style="bottom:200px;z-index:999999;display:none;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><img src="/bgm/i-never-die.webp" data-v-b1d3339e></div> <div class="reco-bgm-box" style="left:10px;bottom:10px;z-index:999999;" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="reco-bgm-cover" style="background-image:url(/bgm/i-never-die.webp);" data-v-b1d3339e><div class="mini-operation" style="display:none;" data-v-b1d3339e><i class="reco-bgm reco-bgm-pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play" style="display:none;" data-v-b1d3339e></i></div> <div class="falut-message" style="display:none;" data-v-b1d3339e>
+          播放失败
+        </div></div> <div class="reco-bgm-info" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-music music" data-v-b1d3339e></i>TOMBOY</div> <div class="info-box" data-v-b1d3339e><i class="reco-bgm reco-bgm-artist" data-v-b1d3339e></i>(G)I-DLE</div> <div class="reco-bgm-progress" data-v-b1d3339e><div class="progress-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div> <div class="reco-bgm-operation" data-v-b1d3339e><i class="reco-bgm reco-bgm-last last" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-pause pause" style="display:none;" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-play play" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-next next" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-volume1 volume" data-v-b1d3339e></i> <i class="reco-bgm reco-bgm-mute mute" style="display:none;" data-v-b1d3339e></i> <div class="volume-bar" data-v-b1d3339e><div class="bar" data-v-b1d3339e></div></div></div></div> <div class="reco-bgm-left-box" data-v-b1d3339e data-v-41bcba48 data-v-b1d3339e><i class="reco-bgm reco-bgm-left" data-v-b1d3339e></i></div></div></div></div></div>
+    <script src="/blog/assets/js/app.574301b3.js" defer></script><script src="/blog/assets/js/3.c3053bb5.js" defer></script><script src="/blog/assets/js/1.a246ea40.js" defer></script><script src="/blog/assets/js/14.c37762dd.js" defer></script>
+  </body>
+</html>
